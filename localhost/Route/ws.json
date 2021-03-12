@@ -1,0 +1,9 @@
+[
+    {
+        "url":"/",
+        "middleware" : [],
+        "group":[
+            {"url": "/", "controller" : "site/site@index"}
+        ]
+    }
+]

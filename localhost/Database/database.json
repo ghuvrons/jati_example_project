@@ -1,0 +1,20 @@
+{
+  "db1": {
+    "driver": "Jati.Database.MySQL",
+    "config" : {
+      "host": "localhost",
+      "user": "Jati",
+      "password": "ppmttphq",
+      "database": "Jati_example",
+      "transaction_only": true
+    },
+    "dbs_read": [
+      {
+        "host": "localhost",
+        "user": "Jati",
+        "password": "ppmttphq",
+        "database": "Jati_example"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+[
+    {
+        "url": "/test",
+        "middleware" : ["header/contentType/appJSON@run"],
+        "error": "site/site@error",
+        "group":[
+            {"url": "/", "controller" : "site/site@index"}
+        ]
+    }
+]
