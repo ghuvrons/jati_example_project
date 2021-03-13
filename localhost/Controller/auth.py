@@ -1,13 +1,13 @@
 from Jati.Base.Controller import Controller
-import jwt
 
 class auth(Controller):
+    Services = {}
     def index(self, req):
         return "Hello World"
 
     def generate_token(self, req):
-        encoded_jwt = jwt.encode({"some": "payload"}, "secret", algorithm="HS256")
+        token = self.Services["auth"].generate_token()
         return {
-            "token": encoded_jwt,
+            "token": token,
             "data": req.data
         }
