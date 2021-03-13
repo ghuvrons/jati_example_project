@@ -1,10 +1,16 @@
 [
     {
-        "url": "/test",
+        "url": "/",
         "middleware" : ["header/contentType/appJSON@run"],
         "error": "site/site@error",
         "group":[
-            {"url": "/", "controller" : "site/site@index"}
+            {"url": "/", "controller" : "site/site@index"},
+            {
+                "url": "/auth", 
+                "group" : [
+                    {"url": "/generate-token", "method": ["POST"], "controller": "auth/auth@generate_token"}
+                ]
+            }
         ]
     }
 ]
