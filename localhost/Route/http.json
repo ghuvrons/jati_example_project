@@ -10,6 +10,14 @@
                 "group" : [
                     {"url": "/generate-token", "method": ["POST"], "controller": "auth/auth@generate_token"}
                 ]
+            },
+            {
+                "url": "/myaccount", 
+                "controller" : "auth/auth@_user"
+            },
+            {
+                "url": "/roles", 
+                "controller" : "user/user@list_role"
             }
         ]
     }

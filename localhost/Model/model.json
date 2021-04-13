@@ -1,3 +1,7 @@
 {
-    "user": "User.User"
+    "user": "User.User",
+    "auth.user_role": "Auth.UserRolePermission",
+    "auth.role": "Auth.Role",
+    "auth.permission": "Auth.Permission",
+    "auth.role_permission": "Auth.RolePermission"
 }

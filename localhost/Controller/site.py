@@ -2,12 +2,12 @@ from Jati.Base.Controller import Controller
 
 class site(Controller):
     Services = {}
-    def index(self, req):
+    def index(self):
         return "Hello World"
 
-    def error(self, req, code, message):
-        req.set_respone_header('Content-Type', "application/json")
+    def error(self, **kw):
+        kw['respond'].set_header('Content-Type', "application/json")
         return {
-            "status": code,
-            "message": message
+            "status": kw['error_code'],
+            "message": kw['error_message']
         }
