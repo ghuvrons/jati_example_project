@@ -3,6 +3,7 @@ from Jati.Base.Controller import Controller
 class user(Controller):
     Services = {}
     Models = {}
+    Databases = {}
     def index(self):
         return "Hello World"
 
@@ -31,8 +32,41 @@ class user(Controller):
 
     def tes_query(self):
         tabel_user = self.Databases["db1"]['user']
+        tabel_role = self.Databases["db1"]['auth_item']
         
         # select. output iter
+        print('q1')
+        users = tabel_user.select(('name', 'nama',), 'email')
+        print(users)
+
+        # select. output iter
+        print('q2')
+        roles = tabel_role.select()
+        print(roles)
+
+        # select. output iter
+        print('q3 updating')
+        user_updated = tabel_user.update({
+            "name": "gupron"
+        }, where=(('id', 1), ))
+        print(user_updated)
+        print('q3 updated')
+        
+        print('user_updated', user_updated)
+        for u in user_updated:
+            print("updated", u)
+
+        print('roles', roles)
+        for r in roles:
+            print("role", r)
+            
+        print('rq1', users, users.query)
+        g = users.__next__()
+        print(g)
+        for u in users:
+            print("user", u)
+
+        # select advace. output iter
         tabel_user.select('name', 'email', 'phone', 
             join=(('customer', 'c'), 'c.id_user = user.id'),
             where=[],
@@ -43,15 +77,9 @@ class user(Controller):
 
         # insert
         tabel_user.insert({
-            name: "Moh Gupron", 
-            email:"ghuvrons@gmail.com"
+            "name": "Moh Gupron", 
+            "email":"ghuvrons@gmail.com"
         })
-
-        # update
-        tabel_user.update(
-            {},
-            where=[]
-        )
 
         # asd
         tabel_user.delete(

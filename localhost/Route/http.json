@@ -6,6 +6,13 @@
         "group":[
             {"url": "/", "controller" : "site/site@index"},
             {
+                "url": "/test", 
+                "group" : [
+                    {"url": "/query", "method": ["GET"], "controller": "user/user@tes_query"},
+                    {"url": "/query_mongo", "method": ["GET"], "controller": "test/test@mongo_query"}
+                ]
+            },
+            {
                 "url": "/auth", 
                 "group" : [
                     {"url": "/generate-token", "method": ["POST"], "controller": "auth/auth@generate_token"}

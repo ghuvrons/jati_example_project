@@ -1,4 +1,4 @@
-from Jati.Base.Model import Model
+from Jati.Database.SQL.Model import Model
 
 class Role(Model):
     CACHE = {}

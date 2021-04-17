@@ -1,5 +1,6 @@
 from Jati.Base.Auth import AuthModel
-from .Auth import *
+from Jati.Database.SQL.Model import Model
+from .Auth import UserRolePermission
 
 class User(Model, AuthModel):
     DB = "db1"

@@ -1,11 +1,29 @@
 {
   "db1": {
-    "driver": "Jati.Database.MySQL",
+    "driver": "Jati.Database.SQL.mysql",
     "config" : {
       "host": "localhost",
       "user": "root",
       "password": "",
       "database": "jati_tester",
+      "transaction_only": true
+    },
+    "dbs_read": [
+      {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "jati_tester"
+      }
+    ]
+  },
+  "db2": {
+    "driver": "Jati.Database.noSQL.mongo",
+    "config" : {
+      "host": "localhost",
+      "user": "root",
+      "password": "",
+      "database": "sandhika",
       "transaction_only": true
     },
     "dbs_read": [
